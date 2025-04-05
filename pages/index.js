@@ -1,8 +1,6 @@
 // pages/index.js
 
-import dynamic from 'next/dynamic';
-
-const Home = dynamic(() => import('../components/Home'), { ssr: false });
+import Home from './home';  // 直接 /home をインポート
 
 export default function IndexPage() {
   return <Home />;

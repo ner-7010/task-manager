@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { collection, addDoc, onSnapshot, updateDoc, doc, deleteDoc, query, where } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import { onAuthStateChanged } from 'firebase/auth';
+import { auth, db } from '../firebase';
 
 const Home = () => {
   const router = useRouter();
@@ -11,7 +12,7 @@ const Home = () => {
   const [newTask, setNewTask] = useState("");
   const [priority, setPriority] = useState("");  // 優先度
   const [dueDate, setDueDate] = useState("");   // 期限
-  const [tasksList, setTasksList] = useState([]);
+  const [tasksList, setTasksList] = useState([]);  // 初期値を空配列に変更
   const [filter, setFilter] = useState("all");  // フィルタの状態
 
   useEffect(() => {
@@ -98,7 +99,7 @@ const Home = () => {
   };
 
   // フィルタリング機能
-  const filteredTasks = tasksList.filter((task) => {
+  const filteredTasks = (tasksList || []).filter((task) => {
     if (filter === "completed") return task.completed;
     if (filter === "notCompleted") return !task.completed;
     return true;  // "all" フィルター
