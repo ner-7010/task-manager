@@ -4,7 +4,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth"; // 認証用
 import { getFirestore } from "firebase/firestore"; // Firestore 用
-import { getAnalytics } from "firebase/analytics"; // Analytics（任意）
+import { getAnalytics, isSupported } from "firebase/analytics"; // Analytics（任意）
 
 // Firebase 設定情報（Firebase Console から取得）
 const firebaseConfig = {
@@ -16,15 +16,18 @@ const firebaseConfig = {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-console.log("API Key: ", process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
-
 // Firebase を初期化
 const app = initializeApp(firebaseConfig);
 
 // 各サービスのインスタンスを取得
 const auth = getAuth(app); // 認証サービス
 const db = getFirestore(app); // Firestore データベース
-const analytics = getAnalytics(app); // Analytics（必要に応じて）
+
+let analytics;
+if (typeof window !== "undefined" && isSupported()) {
+  analytics = getAnalytics(app); // クライアントサイドでのみ初期化
+}
 
 // 使いたいサービスをエクスポート
 export { auth, db, analytics };
+
