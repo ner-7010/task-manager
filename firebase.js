@@ -16,6 +16,8 @@ const firebaseConfig = {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
+console.log("API Key: ", process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
+
 // Firebase を初期化
 const app = initializeApp(firebaseConfig);
 
