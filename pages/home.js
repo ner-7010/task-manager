@@ -1,7 +1,6 @@
 // pages/home.js
 
 import { useEffect, useState } from 'react';
-import { db, auth } from '../firebase';  // firebase の設定
 import { collection, addDoc, onSnapshot, updateDoc, doc, deleteDoc, query, where } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 import { onAuthStateChanged } from 'firebase/auth';
