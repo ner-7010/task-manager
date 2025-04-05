@@ -24,8 +24,8 @@ const auth = getAuth(app); // 認証サービス
 const db = getFirestore(app); // Firestore データベース
 
 let analytics;
-if (typeof window !== "undefined" && isSupported()) {
-  analytics = getAnalytics(app); // クライアントサイドでのみ初期化
+if (typeof window !== "undefined" && isSupported() && process.browser) {
+    analytics = getAnalytics(app); // クライアントサイドでのみ初期化
 }
 
 // 使いたいサービスをエクスポート
