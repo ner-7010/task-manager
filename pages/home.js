@@ -28,22 +28,34 @@ const Home = () => {
       <h1 className={styles.title}>メニュー</h1>
       <ul className={styles.menu}>
         <li className={styles.menuItem}>
-          <Link href="/study">勉強タスク管理</Link>
+          <Link href="/study">
+            <a className={styles.link}>勉強タスク管理</a>
+          </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/homework">宿題管理</Link>
+          <Link href="/homework">
+            <a className={styles.link}>宿題管理</a>
+          </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/submission">提出物管理</Link>
+          <Link href="/submission">
+            <a className={styles.link}>提出物管理</a>
+          </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/gamegoal">音ゲー目標管理</Link>
+          <Link href="/gamegoal">
+            <a className={styles.link}>音ゲー目標管理</a>
+          </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/life">日常生活の記録</Link>
+          <Link href="/life">
+            <a className={styles.link}>日常生活の記録</a>
+          </Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/sleep">睡眠時間の記録</Link>
+          <Link href="/sleep">
+            <a className={styles.link}>睡眠時間の記録</a>
+          </Link>
         </li>
       </ul>
     </div>
