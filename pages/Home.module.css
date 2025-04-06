@@ -38,8 +38,6 @@
   color: white;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  
-  /* Flexboxで文字を中央に配置 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +47,6 @@
   background-color: #0056b3;
 }
 
-/* aタグ用のリンクスタイル */
 .link {
   text-decoration: none;  /* 下線を削除 */
   color: white;
@@ -58,6 +55,39 @@
   height: 100%;
   padding: 15px;
 }
+
+.rightPanel {
+  margin-top: 40px;
+  padding: 20px;
+  width: 300px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.rightPanel h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.calendarLink {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.calendarLink:hover {
+  text-decoration: underline;
+}
+
+.dayView {
+  font-size: 1.2rem;
+  color: #333;
+}
+
 
 @media (max-width: 600px) {
   .menuItem {

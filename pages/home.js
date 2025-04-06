@@ -1,10 +1,9 @@
-// pages/home.js
-
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase';
 import Link from 'next/link';
+import Calendar from './calendar'; // カレンダーコンポーネントをインポート
 import styles from './Home.module.css'; // CSS モジュールを使用
 
 const Home = () => {
@@ -46,8 +45,24 @@ const Home = () => {
           <Link href="/sleep" className={styles.link}>睡眠時間の記録</Link>
         </li>
       </ul>
+
+      {/* 右側にカレンダーを表示 */}
+      <div className={styles.rightPanel}>
+        <h2>今日のスケジュール</h2>
+        <CalendarView />
+        <Link href="/calendar" className={styles.calendarLink}>
+          カレンダーを開く
+        </Link>
+      </div>
     </div>
   );
 };
+
+// 1日カレンダーの表示コンポーネント
+const CalendarView = () => (
+  <div className={styles.dayView}>
+    <p>ここに1日モードのカレンダーが表示されます。</p>
+  </div>
+);
 
 export default Home;
