@@ -1,14 +1,11 @@
-/* pages/Home.module.css */
-
 .container {
   font-family: 'Arial', sans-serif;
   padding: 20px;
   background-color: #f4f4f9;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;  /* メニューとカレンダーを横並びにする */
+  align-items: flex-start;      /* 上に揃える */
 }
 
 .title {
@@ -26,6 +23,7 @@
   flex-direction: column;
   gap: 15px;
   text-align: center;
+  margin-right: 40px; /* カレンダーとメニューの間にスペースを追加 */
 }
 
 .menuItem {
@@ -57,7 +55,6 @@
 }
 
 .rightPanel {
-  margin-top: 40px;
   padding: 20px;
   width: 300px;
   background-color: #ffffff;
@@ -88,9 +85,22 @@
   color: #333;
 }
 
-
 @media (max-width: 600px) {
   .menuItem {
     width: 100%;
+  }
+
+  .container {
+    flex-direction: column; /* 小さい画面で縦並びにする */
+    align-items: center;
+  }
+
+  .menu {
+    margin-right: 0;  /* 小さい画面ではメニューとカレンダーを縦に並べる */
+  }
+
+  .rightPanel {
+    width: 100%;
+    margin-top: 20px;
   }
 }
