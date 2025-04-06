@@ -37,6 +37,11 @@
   color: white;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  
+  /* Flexboxで文字を中央に配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menuItem:hover {
@@ -45,7 +50,7 @@
 
 /* aタグ用のリンクスタイル */
 .link {
-  text-decoration: none;
+  text-decoration: none;  /* 下線を削除 */
   color: white;
   display: block;
   width: 100%;
