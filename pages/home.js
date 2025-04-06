@@ -1,5 +1,3 @@
-// pages/home.js
-
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -28,34 +26,22 @@ const Home = () => {
       <h1 className={styles.title}>メニュー</h1>
       <ul className={styles.menu}>
         <li className={styles.menuItem}>
-          <Link href="/study">
-            <a className={styles.link}>勉強タスク管理</a>
-          </Link>
+          <Link href="/study" className={styles.link}>勉強タスク管理</Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/homework">
-            <a className={styles.link}>宿題管理</a>
-          </Link>
+          <Link href="/homework" className={styles.link}>宿題管理</Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/submission">
-            <a className={styles.link}>提出物管理</a>
-          </Link>
+          <Link href="/submission" className={styles.link}>提出物管理</Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/gamegoal">
-            <a className={styles.link}>音ゲー目標管理</a>
-          </Link>
+          <Link href="/gamegoal" className={styles.link}>音ゲー目標管理</Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/life">
-            <a className={styles.link}>日常生活の記録</a>
-          </Link>
+          <Link href="/life" className={styles.link}>日常生活の記録</Link>
         </li>
         <li className={styles.menuItem}>
-          <Link href="/sleep">
-            <a className={styles.link}>睡眠時間の記録</a>
-          </Link>
+          <Link href="/sleep" className={styles.link}>睡眠時間の記録</Link>
         </li>
       </ul>
     </div>
